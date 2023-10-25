@@ -1,9 +1,12 @@
 <!-- header.html -->
-<!-- 圖片  width="100" height="100"--> 
+<!-- 圖片 --> 
 {% load static %}
-<div class='well'>
-    <img  src="{% static "images/logo.jpg" %}" width="100" height="100" >
+<div class="well" style="display: flex; align-items: center;">
+    <img src="{% static "images/logo.jpg" %}" width="100" height="100" style="flex: 0 0 auto; margin-right: 20px;">
+    <div>
+        <!-- 標題 -->
+        <h1 style="font-family:標楷體;">大圖書館的牧羊人</h1>
+        <!-- 這裡可以添加其他文本內容 -->
+        <p>這裡能找到你要的書本</p>
+    </div>
 </div>
-<!-- 標題 --> 
-<h1 style="font-family:標楷體;">大圖書館的牧羊人</h1>
-
