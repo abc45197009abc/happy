@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from mysite.models import Post
-from django.http import HttpResponse
+from mysite.models import Post,Product
+from django.http import HttpResponse,Http404
 from datetime import datetime
 from django.shortcuts import redirect
 import random
@@ -16,6 +16,8 @@ def showpost(request, slug):
         return render(request, 'post.html', {'post': post})
     except Post.DoesNotExist:
         return redirect("/")  # 書本不存在，重定向到首頁   
+    
+    
 def about(request,num=-1):
     quotes = ['今日事，今日畢',
             '要怎麼收穫，先那麼栽',
