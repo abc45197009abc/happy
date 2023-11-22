@@ -8,6 +8,7 @@ import random
 def homepage(request):
     posts = Post.objects.all()
     now = datetime.now()
+    hour = now.timetuple().tm_hour
     return render(request, 'index.html', locals())
     
 def showpost(request, slug):
