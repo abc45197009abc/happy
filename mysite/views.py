@@ -64,17 +64,17 @@ def homepage(request):
         post_lists.append(f'No. {counter}-{post} <br>')
     return HttpResponse(post_lists)
 '''
+
 def new_post(request):
+    print(f'form method: {request.method}')
     if request.method == 'GET':
         return render(request, 'myform_1.html', locals())
     elif request.method == 'POST':
-        username = request.POST['user_id']
-        password = request.POST['password']
-        if username == 'ntub' and password == 'a123':
-            is_validated = True
-        else:
-            is_validated = False
-        print(f'post-username:{username}, password:{password}')
+        title = request.POST['title']
+        slug = request.POST['slug']
+        content = request.POST['content']
+        post= Post(title=title,slug=slug,body=content)
+        post.save()
         return render(request, 'myform_1.html', locals())
     '''
     try:
