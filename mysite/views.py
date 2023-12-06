@@ -64,6 +64,8 @@ def homepage(request):
         post_lists.append(f'No. {counter}-{post} <br>')
     return HttpResponse(post_lists)
 '''
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 def new_post(request):
     print(f'form method: {request.method}')
@@ -75,7 +77,8 @@ def new_post(request):
         content = request.POST['content']
         post= Post(title=title,slug=slug,body=content)
         post.save()
-        return render(request, 'myform_1.html', locals())
+        return HttpResponseRedirect(reverse('show-all-posts'))
+        #return render(request, 'myform_1.html', locals())
     '''
     try:
         username = request.GET['user_id']
