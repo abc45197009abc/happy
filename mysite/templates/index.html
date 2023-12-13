@@ -2,15 +2,19 @@
 {% block title %}大圖書館的牧羊人{% endblock title %}
 {% block headmessage %} 
 <h3 style='font-family:標楷體;'>書藏列表</a>  
-    hour:{{ hour }}
-{% if hour > 18 %}
-晚安 
-{% elif hour < 10 %}
-早安
-{% else %}
-你好 
-{% endif %}
-<br>
+<label for='byear'>無意義的年份:</label>
+<select name='byear'>
+    {% for year in years %}
+        <option value='{{ year }}'>西元 {{ year }}
+        </option>
+    {% endfor %}
+</select><br>
+<input type='radio' name='fcolor' value='2001'>2001 </input>
+<input type='radio' name='fcolor' value='2002'>2002 </input>
+<input type='radio' name='fcolor' value='2003'>2003 </input>
+<input type='checkbox' name='fcolor' value='Yellow'>Yellow  </input>
+<input type='checkbox' name='fcolor' value='Orange'>Orange </input>
+
 {% endblock headmessage %}
 {% block content %} 
 {% for post in posts %}

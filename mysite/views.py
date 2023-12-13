@@ -8,7 +8,7 @@ def homepage(request):
     posts = Post.objects.all()
     now = datetime.now()
     hour = now.timetuple().tm_hour
-    print(f'hour = {hour}')
+    years = range(1960,2024)
     return render(request, 'index.html', locals())
     
 def show_all_posts(request):
@@ -64,8 +64,6 @@ def homepage(request):
         post_lists.append(f'No. {counter}-{post} <br>')
     return HttpResponse(post_lists)
 '''
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 
 def new_post(request):
     print(f'form method: {request.method}')
@@ -75,10 +73,10 @@ def new_post(request):
         title = request.POST['title']
         slug = request.POST['slug']
         content = request.POST['content']
-        post= Post(title=title,slug=slug,body=content)
+        category = request.POST.getlist('category')
+        post = Post(title=title, slug=slug, body=content, category=category)
         post.save()
-        return HttpResponseRedirect(reverse('show-all-posts'))
-        #return render(request, 'myform_1.html', locals())
+        return render(request, 'myform_1.html', locals())
     '''
     try:
         username = request.GET['user_id']
