@@ -1,28 +1,24 @@
 {% extends "base2.html" %}
-{% block title %}大圖書館的牧羊人{% endblock title %}
+{% block title %}歡迎光臨我的部落格{% endblock title %}
 {% block headmessage %} 
-<h3 style='font-family:標楷體;'>書藏列表</a>  
-<label for='byear'>無意義的年份:</label>
-<select name='byear'>
+<h3 style='font-family:標楷體;'>本站文章列表</h3> 
+<label for="byear">無意義年份:</label>
+<select name="byear">
     {% for year in years %}
-        <option value='{{ year }}'>西元 {{ year }}
-        </option>
+    <option value="{{year}}">西元 {{year}}</option>
     {% endfor %}
-</select><br>
-<input type='radio' name='fcolor' value='2001'>2001 </input>
-<input type='radio' name='fcolor' value='2002'>2002 </input>
-<input type='radio' name='fcolor' value='2003'>2003 </input>
-<input type='checkbox' name='fcolor' value='Yellow'>Yellow  </input>
-<input type='checkbox' name='fcolor' value='Orange'>Orange </input>
-
-{% endblock headmessage %}
+</select>
+<input type='radio' name='ryear' checked>2000</input>
+<input type='radio' name='ryear'>2001</input>
+<input type='radio' name='ryear'>2002</input>
+<input type='radio' name='ryear'>2003</input>
+{% endblock headmessage %} 
 {% block content %} 
 {% for post in posts %}
 <div class='card'>
     <div class='card-header'>
         <p style='font-family:微軟正黑體;font-size:14pt;font-weight:bold;'>
-            <a href='{% url 'showpost' post.slug %}'>{{ post.title }}</a>
-            /post/{{post.slug}}
+            <a href='/post/{{post.slug}}'>{{ post.title }}</a>
         </p>
     </div>
     <div class='card-body' style='background-color:#10DF10'>
@@ -36,6 +32,6 @@
         </p>
     </div>
 </div>
-<br>
+<br> 
 {% endfor %}
-{% endblock %}
+{% endblock content %}

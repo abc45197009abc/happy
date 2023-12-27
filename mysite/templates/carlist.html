@@ -1,8 +1,8 @@
 {% extends "base2.html" %}
-{% block title %}大圖書館的牧羊人{% endblock title %}
+{% block title %}歡迎光臨我的Cars{% endblock title %}
 {% block headmessage %} 
-<h3 style='font-family:標楷體;'>車子{{maker_name}} </a>  
-{% endblock headmessage %}
+<h3 style='font-family:標楷體;'>車子 - {{ maker_name }}</a> 
+{% endblock headmessage %} 
 
 {% block content %} 
 <h2>歡迎光臨DJ二手車賣場</h2>
@@ -16,7 +16,7 @@
     </tr>
 </table>
 {% if cars %}
-<table class='table table-bordered'>
+<table>
     <tr><td>車廠</td><td>車款</td><td>車價</td></tr>
 {% endif %}
 
@@ -34,4 +34,6 @@
 {% if cars %}
 </table>
 {% endif %}
-{% endblock %}
+
+
+{% endblock content %}

@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ovxdcyj$97obu4d&kj)tcr+f0l5!x8d8!trw^^ksq2u+j4^5tt'
+SECRET_KEY = 'django-insecure-3)m4iy3owt7c^@y-abav6-qntcbzj%t9%m2b7$jzbff%6*payc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'mysite',
-    'mytest',
+    'mytest'
 ]
 
 MIDDLEWARE = [
@@ -117,12 +117,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
-#靜態網站 放置圖片
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = (
     BASE_DIR / 'static',
 )
-STATIC_URL = '/static/'
+
+STATIC_URL = 'static/'
 
 
 # Default primary key field type
