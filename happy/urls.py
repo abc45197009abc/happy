@@ -1,5 +1,5 @@
 """
-URL configuration for mblog0927 project.
+URL configuration for happy project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -34,4 +34,7 @@ urlpatterns = [
     path('test/delpost/<int:pid>/', testv.delpost),
     path('test/contact', testv.contact),
     path('post2db/', testv.post2db),
+    path('register/', testv.register),
+    path('login/', testv.login, name='login'),
+    path('profile/', testv.profile)
 ]
